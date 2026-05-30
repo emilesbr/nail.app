@@ -5,10 +5,6 @@ import { usePathname } from 'next/navigation'
 import { createSupabaseBrowserClient } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
 
-interface ProNavProps {
-  proName: string
-}
-
 const navLinks = [
   { href: '/pro/dashboard', label: 'Accueil' },
   { href: '/pro/clientes', label: 'Clientes' },
@@ -16,7 +12,7 @@ const navLinks = [
   { href: '/pro/parametres', label: 'Paramètres' },
 ]
 
-export default function ProNav({ proName: _proName }: ProNavProps) {
+export default function ProNav() {
   const pathname = usePathname()
   const router = useRouter()
 
