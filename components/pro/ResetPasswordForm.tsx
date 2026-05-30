@@ -21,7 +21,7 @@ export default function ResetPasswordForm() {
     })
 
     if (resetError) {
-      setError('Une erreur est survenue. Vérifiez l\'email saisi.')
+      setError(resetError.message)
     } else {
       setSent(true)
     }
