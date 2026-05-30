@@ -37,8 +37,9 @@ export async function createSupabaseServerClient() {
 }
 
 // Client admin avec service role key (pour les opérations back-office uniquement)
+import { createClient } from '@supabase/supabase-js'
+
 export function createSupabaseAdminClient() {
-  const { createClient } = require('@supabase/supabase-js')
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,

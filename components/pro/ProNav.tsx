@@ -16,7 +16,7 @@ const navLinks = [
   { href: '/pro/parametres', label: 'Paramètres' },
 ]
 
-export default function ProNav({ proName }: ProNavProps) {
+export default function ProNav({ proName: _proName }: ProNavProps) {
   const pathname = usePathname()
   const router = useRouter()
 

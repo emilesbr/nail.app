@@ -21,9 +21,9 @@ export default async function ClientesPage() {
   // Calcule le solde et la dernière visite pour chaque cliente
   const clientesWithStats = (clientes ?? []).map((c) => {
     const points = c.fidelity_points ?? []
-    const totalPoints = points.reduce((sum: number, p: any) => sum + p.points, 0)
+    const totalPoints = points.reduce((sum: number, p: { points: number }) => sum + p.points, 0)
     const lastVisit = points.length > 0
-      ? points.sort((a: any, b: any) =>
+      ? points.sort((a: { created_at: string }, b: { created_at: string }) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
         )[0].created_at
       : null

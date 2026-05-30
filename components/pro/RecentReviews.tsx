@@ -28,7 +28,7 @@ export default function RecentReviews({ reviews }: RecentReviewsProps) {
           </div>
           <StarRating value={review.rating} readonly size="sm" />
           {review.comment && (
-            <p className="text-gray-600 text-sm mt-2 italic">"{review.comment}"</p>
+            <p className="text-gray-600 text-sm mt-2 italic">&ldquo;{review.comment}&rdquo;</p>
           )}
         </div>
       ))}

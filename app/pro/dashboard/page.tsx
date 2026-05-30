@@ -5,8 +5,6 @@ import RecentReviews from '@/components/pro/RecentReviews'
 
 export default async function DashboardPage() {
   const supabase = await createSupabaseServerClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
   // Nombre de clientes actives (au moins une visite)
   const { count: activeClients } = await supabase
     .from('profiles')
