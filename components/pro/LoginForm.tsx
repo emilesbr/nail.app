@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { createSupabaseBrowserClient } from '@/lib/supabase'
 
 export default function LoginForm() {
@@ -63,6 +64,9 @@ export default function LoginForm() {
       <button type="submit" className="btn-primary" disabled={loading}>
         {loading ? 'Connexion...' : 'Se connecter'}
       </button>
+      <Link href="/reset-password" className="block text-center text-sm text-gray-400 hover:text-gray-600">
+        Mot de passe oublié ?
+      </Link>
     </form>
   )
 }
